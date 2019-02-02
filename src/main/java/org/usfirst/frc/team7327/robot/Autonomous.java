@@ -81,23 +81,6 @@ public class Autonomous {
 			}
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 	public static void MoveAngle(double angle ) {
 		Robot.drivetrain.setRaw1(.25,  .25);

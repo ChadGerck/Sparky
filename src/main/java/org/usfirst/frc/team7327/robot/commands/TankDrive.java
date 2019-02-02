@@ -29,10 +29,9 @@ public class TankDrive extends Command {
 	double throttleA = .8;
 	double throttleS = .7;
 
-	//Servo Servo1 = new Servo(8);
-	//Servo Servo2 = new Servo(9);
 	XboxController Player1 = Robot.oi.Controller0; 
 	XboxController Player2 = Robot.oi.Controller1;
+
 	protected void initialize() {
 		if(SinglePlayer) { Player2 = Robot.oi.Controller0; }
 		DoubleSolenoid.clearAllPCMStickyFaults(0);
@@ -95,7 +94,7 @@ public class TankDrive extends Command {
 		else if(Robot.oi.Dpad(Player2) >= 225 && Robot.oi.Dpad(Player2) < 315) { DRight = -throttleS; DLeft = -throttleS; }
 		else { DRight = 0; DLeft = 0; } 
 		
-		if( !Dpressed && !SinglePlayer) { Robot.drivetrain.setRawSpinner(Robot.oi.getLeftStickX(Player2)*throttleS-Robot.oi.getLeftStickY(Player2)*throttleS, Robot.oi.getLeftStickX(Player2)*throttleS + Robot.oi.getLeftStickY(Player2)*throttleS ); }
+		if( !Dpressed && !SinglePlayer) { Robot.drivetrain.setRawSpinner(Robot.oi.getLeftStickX(Player2)*throttleS+Robot.oi.getLeftStickY(Player2)*throttleS, Robot.oi.getLeftStickX(Player2)*throttleS - Robot.oi.getLeftStickY(Player2)*throttleS ); }
 		else if(Dpressed && !SinglePlayer) { Robot.drivetrain.setRawSpinner(DLeft, DRight); }
 		if(SinglePlayer) { Robot.drivetrain.setRawSpinner(DLeft, DRight); }
 		

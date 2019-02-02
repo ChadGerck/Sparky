@@ -32,6 +32,11 @@ public class DriveTrain extends Subsystem {
 		LeftTalon1 = new TalonSRX(1);
 		RightTalon = new TalonSRX(2);
 		RightTalon1= new TalonSRX(3);
+
+		//LeftTalon = enableVoltageCompensation(true); 
+		//LeftTalon1 = enableVoltageCompensation(true);  
+		//RightTalon = enableVoltageCompensation(true); 
+		//RightTalon1 = enableVoltageCompensation(true); 
 		
 		ArmMotor = new Spark(RobotMap.ARM_MOTOR.value);
 		SpinnerLeft = new Spark(RobotMap.SpinnerLeft_MOTOR.value);
